@@ -1,0 +1,16 @@
+version: '3'
+volumes:
+  data:
+services:
+  db:
+    image: mariadb
+    network_mode: "host"
+    environment:
+      MYSQL_ROOT_PASSWORD: VMware1!
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: vmware
+      MYSQL_PASSWORD: VMware1!
+    volumes:
+      - ./src:/var/lib/mysql
+    ports:
+      - "3306:3306"
