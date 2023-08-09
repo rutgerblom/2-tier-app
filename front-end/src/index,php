@@ -66,6 +66,17 @@ if (is_resource($connection))
     }
 ?>
 
+<?php
+$client = $_SERVER['REMOTE_ADDR'];
+echo '<p style="color:red">'."LATENCY = ".'</p>';
+ob_end_flush();
+flush();
+exec("ping -c 3 $client", $output, $status);
+#print_r($output[7]);
+#echo '<p style="color:red">'.$output[7].'</p>';
+$parts = explode('/', $output[7]);
+echo '<p style="color:red">'.$parts[4] ." ms" .'</p>';
+?>
 
 </body>
 
