@@ -26,7 +26,7 @@ To stop the frontend:
 ```sudo ~/git/2-tier-app/frontend/down.sh```
 
 ### Backend Component
-Depending on your use case, the backend component can run on the same or a different machine.
+Depending on your use case, the backend component can run on the same or on a different machine.
 
 To start the backend:
  
