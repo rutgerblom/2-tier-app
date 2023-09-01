@@ -41,7 +41,6 @@ function ping($endpoint, $port, $timeout) {
 }
 
 $output = ping("$host", 3306, 10);
-echo '<h3 style="color:blue">'."Latency between frontend and backend:  ". $output . '</h3>';
 
 $connection = @fsockopen($host, $port, $errno, $errstr, 2);
 if (is_resource($connection))
@@ -52,7 +51,7 @@ if (is_resource($connection))
                         echo '<h2> Frontend server name:<font color=green> ' . $hostname . '</h2>' . "\n";
                         echo '<h2> <font color=black> Frontend IP Address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
                         echo '<h2> <font color=black> Frontend has access to backend:<font color=green> ' . $host . ':' . $port . '</h2><font color=black>' . "\n";
-                        echo '<h2> <font color=black> Latency between frontend and backend: ' . $output . '</h2>' . "\n";
+                        echo '<h2> <font color=black> Latency between frontend and backend:<font color=green> ' . $output . '</h2>' . "\n";
                         fclose($connection);
                     echo '</th>
                     <th style="width:40%">';
