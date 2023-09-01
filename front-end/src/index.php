@@ -1,8 +1,3 @@
-<!--
-Update $host and $port to match your "simulated DB IP:Port".
-This page will test this TCP connectivity and display its result"
--->
-
 <html>
 
 <head>
