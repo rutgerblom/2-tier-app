@@ -1,2 +1,2 @@
 #!/bin/bash
-docker-compose up -d
+docker-compose -f git/2-tier-app/back-end/docker-compose.yml up -d
