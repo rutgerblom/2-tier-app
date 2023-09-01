@@ -4,7 +4,7 @@ Simulate a simple 2-tier application with a nginx + php frontend and a mysql bac
 ![2-tier-app](2-tier-app.png)
 
 ## Preparations
-Prepare one or two Ubuntu 22.04 machines depending on where the backend component will be running:
+Prepare one or two Ubuntu 22.04 machines depending on if you want the backend component to run on its own machine:
 
 * ```sudo apt update && sudo apt install git docker-compose```
 * ```git clone https://github.com/rutgerblom/2-tier-app.git ~/git/2-tier-app```
@@ -26,7 +26,7 @@ To stop the frontend:
 ```sudo ~/git/2-tier-app/frontend/down.sh```
 
 ### Backend Component
-Depending on your use case, the included backend component can run on the same Ubuntu machine as the frontend component or on a different Ubuntu machine.
+Depending on your use case, the included backend component can run on the same or a different machine.
 
 To start the backend:
  
