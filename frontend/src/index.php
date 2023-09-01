@@ -27,8 +27,6 @@ $host = '192.168.225.10';
 $port = '3306';
 $hostname = gethostname();
 
-if (is_resource($connection))
-
 function ping($endpoint, $port, $timeout) {
   $tB = microtime(true);
   $fP = fSockOpen($endpoint, $port, $errno, $errstr, $timeout);
@@ -40,6 +38,7 @@ function ping($endpoint, $port, $timeout) {
 $output = ping("$host", 3306, 10);
 
 $connection = @fsockopen($host, $port, $errno, $errstr, 2);
+if (is_resource($connection))
     {
         echo '<table>
                   <tr>
