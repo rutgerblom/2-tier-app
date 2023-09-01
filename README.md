@@ -9,7 +9,9 @@ Prepare an Ubuntu 22.04 machine by running the following commands:
 * ```sudo apt update && sudo apt install python3 git docker-compose```
 * ```git clone https://github.com/rutgerblom/2-tier-app.git ~/git/2-tier-app```
 * ```chmod +x ~/git/2-tier-app/frontend/up.sh```
+* ```chmod +x ~/git/2-tier-app/frontend/down.sh```
 * ```chmod +x ~/git/2-tier-app/backend/up.sh```
+* ```chmod +x ~/git/2-tier-app/backend/down.sh``
 
 ## Usage
 
