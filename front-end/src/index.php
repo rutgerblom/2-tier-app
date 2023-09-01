@@ -32,6 +32,17 @@ $host = '192.168.225.10';
 $port = '3306';
 $hostname = gethostname();
 
+function ping($endpoint, $port, $timeout) {
+  $tB = microtime(true);
+  $fP = fSockOpen($endpoint, $port, $errno, $errstr, $timeout);
+  if (!$fP) { return "down"; }
+  $tA = microtime(true);
+  return round((($tA - $tB) * 1000), 0)." ms";
+}
+
+$output = ping("$host", 3306, 10);
+echo '<h3 style="color:blue">'."Latency between frontend and backend:  ". $output . '</h3>';
+
 $connection = @fsockopen($host, $port, $errno, $errstr, 2);
 if (is_resource($connection))
     {
@@ -39,8 +50,9 @@ if (is_resource($connection))
                   <tr>
                     <th style="width:60%">';
                         echo '<h2> Frontend server name:<font color=green> ' . $hostname . '</h2>' . "\n";
-                        echo '<h2> <font color=black> Frontend server IP Address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
-                        echo '<h2> <font color=black> Frontend server has access to backend:<font color=green> ' . $host . ':' . $port . '</h2><f                                                                                                         ont color=black>' . "\n";
+                        echo '<h2> <font color=black> Frontend IP Address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
+                        echo '<h2> <font color=black> Frontend has access to backend:<font color=green> ' . $host . ':' . $port . '</h2><font color=black>' . "\n";
+                        echo '<h2> <font color=black> Latency between frontend and backend: ' . $output . '</h2>' . "\n";
                         fclose($connection);
                     echo '</th>
                     <th style="width:40%">';
@@ -64,19 +76,6 @@ if (is_resource($connection))
                   </tr>
                 </table>';
     }
-?>
-
-<?php
-function ping($host, $port, $timeout) {
-  $tB = microtime(true);
-  $fP = fSockOpen($host, $port, $errno, $errstr, $timeout);
-  if (!$fP) { return "down"; }
-  $tA = microtime(true);
-  return round((($tA - $tB) * 1000), 0)." ms";
-}
-
-$output = ping("192.168.225.10", 3306, 10);
-echo '<h3 style="color:blue">'."Latency between frontend and backend:  ". $output . '</h3>';
 ?>
 
 </body>
