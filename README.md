@@ -1,5 +1,5 @@
 # 2-tier-app
-Simulate a simple 2-tier application with a nginx + php frontend and a mysql backend. Both frontend and backend are Docker Compose container applications. The frontend's web page is stored externally to the nginx container under ```frontend/src```  which makes it easyto modify on the fly.
+Simulate a simple 2-tier application with a nginx + php frontend and a mysql backend. Both frontend and backend are Docker Compose container applications. The frontend's web page is stored externally to the nginx container which makes it easyto modify on the fly.
 
 ![2-tier-app](2-tier-app.png)
 
