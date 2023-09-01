@@ -12,5 +12,3 @@ services:
       MYSQL_PASSWORD: VMware1!
     volumes:
       - ./src:/var/lib/mysql
-    ports:
-      - "3306:3306"
