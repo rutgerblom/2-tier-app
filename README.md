@@ -11,7 +11,7 @@ Prepare an Ubuntu 22.04 machine by running the following commands:
 * ```chmod +x ~/git/2-tier-app/frontend/up.sh```
 * ```chmod +x ~/git/2-tier-app/frontend/down.sh```
 * ```chmod +x ~/git/2-tier-app/backend/up.sh```
-* ```chmod +x ~/git/2-tier-app/backend/down.sh``
+* ```chmod +x ~/git/2-tier-app/backend/down.sh```
 
 ## Usage
 
