@@ -47,7 +47,7 @@ if (is_resource($connection))
     {
         echo '<table>
                   <tr>
-                    <th style="width:60%">';
+                    <th style="width:60%", "text-align: left">';
                         echo '<h2> Frontend server name:<font color=green> ' . $hostname . '</h2>' . "\n";
                         echo '<h2> <font color=black> Frontend IP Address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
                         echo '<h2> <font color=black> Frontend has access to Backend:<font color=green> ' . $host . ':' . $port . '</h2><font color=black>' . "\n";
