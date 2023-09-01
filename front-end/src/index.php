@@ -50,8 +50,8 @@ if (is_resource($connection))
                     <th style="width:60%">';
                         echo '<h2> Frontend server name:<font color=green> ' . $hostname . '</h2>' . "\n";
                         echo '<h2> <font color=black> Frontend IP Address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
-                        echo '<h2> <font color=black> Frontend has access to backend:<font color=green> ' . $host . ':' . $port . '</h2><font color=black>' . "\n";
-                        echo '<h2> <font color=black> Latency between frontend and backend:<font color=green> ' . $output . '</h2>' . "\n";
+                        echo '<h2> <font color=black> Frontend has access to Backend:<font color=green> ' . $host . ':' . $port . '</h2><font color=black>' . "\n";
+                        echo '<h2> <font color=black> Latency between Frontend and Backend:<font color=green> ' . $output . '</h2>' . "\n";
                         fclose($connection);
                     echo '</th>
                     <th style="width:40%">';
@@ -65,9 +65,9 @@ if (is_resource($connection))
         echo '<table>
                   <tr>
                     <th style="width:60%">';
-                    echo '<h2> Frontend server name:<font color=green> ' . $hostname . '</h2>' . "\n";
+                        echo '<h2> Frontend server name:<font color=green> ' . $hostname . '</h2>' . "\n";
                         echo '<h2> <font color=black> Frontend server IP Address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
-                        echo '<h2> <font color=red> Frontend server has NO ACCESS to backend: ' . $host . ':' . $port . '</h2><font                                                                                                          color=black> ' . "\n";
+                        echo '<h2> <font color=red> Frontend server has NO ACCESS to Backend: ' . $host . ':' . $port . '</h2><font                                                                                                          color=black> ' . "\n";
                     echo '</th>
                     <th style="width:40%">';
                         echo '<center><img src="DB_NOAccess.jpg" style="width:30%" alt text="DB_NOAccess"></center>';
