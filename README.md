@@ -2,7 +2,7 @@
 
 Docker containers running nginx, php and mysql to simulate a 2-tier application.
 
-## Prerequisites
+## Preparations
 
 Prepare an Ubuntu 22.04 machine by running the following commands:
 
@@ -15,7 +15,7 @@ Prepare an Ubuntu 22.04 machine by running the following commands:
 
 ## Usage
 
-### Frontend
+### Frontend Component
 Modify the values for ```$host``` and ```$port``` in ```frontend/src/index.php``` so that these correspond with the IP address and port number of your backend.
 
 Start the frontend containers by running:
@@ -26,7 +26,7 @@ Stop the frontend containers by running:
 
 ```sudo ~/git/2-tier-app/frontend/down.sh```
 
-### Backend
+### Backend Component
 You can use the backend container that is part of this repository The backend can run on the same as the frontend or on a different host.
 
 Started the back-end by running:
