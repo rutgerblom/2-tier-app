@@ -15,7 +15,7 @@ Depending on whether you want the backend component to run on its own machine, p
 
 ## Usage
 ### Frontend Component
-Modify the values for ```$host``` and ```$port``` in the ```frontend/src/index.php``` file so that these match the IP address and port number of your backend.
+Modify the values for ```$host``` and ```$port``` within the ```frontend/src/index.php``` file so that these match the IP address and port number of your backend.
 
 To start the frontend:
 
