@@ -1,5 +1,5 @@
 # 2-tier-app
-Simulate a simple 2-tier application with a NGINX + PHP frontend and a MySQL backend. Both frontend and backend are Docker Compose container applications. The frontend's web page is stored outside of the NGINX container which makes it easy to modify on the fly.
+Simulate a simple 2-tier application with a NGINX + PHP frontend and a MySQL backend. Both frontend and backend are Docker Compose container applications. The frontend's web page is stored outside of the NGINX container which makes it easy to change the content on the fly.
 
 ![2-tier-app](2-tier-app.png)
 
