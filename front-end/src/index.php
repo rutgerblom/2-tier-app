@@ -28,7 +28,7 @@ table, th, td {
 <p class="solid">
 
 <?php
-$host = '10.204.242.20';
+$host = '192.168.225.10';
 $port = '3306';
 $hostname = gethostname();
 
@@ -38,9 +38,9 @@ if (is_resource($connection))
         echo '<table>
                   <tr>
                     <th style="width:60%">';
-                        echo '<h2> FrontEnd Web Server Name:<font color=green> ' . $hostname . '</h2>' . "\n";
-                        echo '<h2> <font color=black> FrontEnd Web Server IP Address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
-                        echo '<h2> <font color=black> FrontEnd Web Server has access to backend DB:<font color=green> ' . $host . ':' . $port . '</h2><f                                                                                                         ont color=black>' . "\n";
+                        echo '<h2> Frontend web server name:<font color=green> ' . $hostname . '</h2>' . "\n";
+                        echo '<h2> <font color=black> Frontend web server IP Address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
+                        echo '<h2> <font color=black> Frontend web server has access to backend DB:<font color=green> ' . $host . ':' . $port . '</h2><f                                                                                                         ont color=black>' . "\n";
                         fclose($connection);
                     echo '</th>
                     <th style="width:40%">';
@@ -54,9 +54,9 @@ if (is_resource($connection))
         echo '<table>
                   <tr>
                     <th style="width:60%">';
-                    echo '<h2> FrontEnd Web Server Name:<font color=green> ' . $hostname . '</h2>' . "\n";
-                        echo '<h2> <font color=black> FrontEnd Web Server IP Address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
-                        echo '<h2> <font color=red> FrontEnd Web Server has NO ACCESS to backend DB: ' . $host . ':' . $port . '</h2><font                                                                                                          color=black> ' . "\n";
+                    echo '<h2> Frontend web server name:<font color=green> ' . $hostname . '</h2>' . "\n";
+                        echo '<h2> <font color=black> Frontend web server IP Address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
+                        echo '<h2> <font color=red> Frontend web server has NO ACCESS to backend DB: ' . $host . ':' . $port . '</h2><font                                                                                                          color=black> ' . "\n";
                     echo '</th>
                     <th style="width:40%">';
                         echo '<center><img src="DB_NOAccess.jpg" style="width:30%" alt text="DB_NOAccess"></center>';
@@ -67,15 +67,16 @@ if (is_resource($connection))
 ?>
 
 <?php
-$client = $_SERVER['REMOTE_ADDR'];
-echo '<p style="color:red">'."LATENCY = ".'</p>';
-ob_end_flush();
-flush();
-exec("ping -c 3 $client", $output, $status);
-#print_r($output[7]);
-#echo '<p style="color:red">'.$output[7].'</p>';
-$parts = explode('/', $output[7]);
-echo '<p style="color:red">'.$parts[4] ." ms" .'</p>';
+function ping($host, $port, $timeout) {
+  $tB = microtime(true);
+  $fP = fSockOpen($host, $port, $errno, $errstr, $timeout);
+  if (!$fP) { return "down"; }
+  $tA = microtime(true);
+  return round((($tA - $tB) * 1000), 0)." ms";
+}
+
+$output = ping("192.168.225.10", 3306, 10);
+echo '<h3> style="color:blue">'."Latency between front-end and back-end:  ". $output . '</h3>';
 ?>
 
 </body>
