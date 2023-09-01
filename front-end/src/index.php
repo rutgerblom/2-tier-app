@@ -76,7 +76,7 @@ function ping($host, $port, $timeout) {
 }
 
 $output = ping("192.168.225.10", 3306, 10);
-echo '<h3 style="color:blue">'."Latency between front-end and back-end:  ". $output . '</h3>';
+echo '<h3 style="color:blue">'."Latency between frontend web server and backend DB:  ". $output . '</h3>';
 ?>
 
 </body>
