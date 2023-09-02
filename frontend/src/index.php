@@ -28,6 +28,7 @@ $port = '3306';
 $hostname = gethostname();
 
 $connection = @fsockopen($host, $port, $errno, $errstr, 2);
+
 if (is_resource($connection))
     {
         function ping($endpoint, $portnumber, $timeout) {
