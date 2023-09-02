@@ -26,7 +26,6 @@ table, th, td {
 $host = '192.168.225.10';
 $port = '3306';
 $hostname = gethostname();
-
 $connection = @fsockopen($host, $port, $errno, $errstr, 2);
 
 if (is_resource($connection))
@@ -60,7 +59,7 @@ if (is_resource($connection))
     {
         echo '<table>
                   <tr>
-                    <th style="width:60%">';
+                    <th style="width:60%;text-align:left">';
                         echo '<h2> Frontend server name:<font color=green> ' . $hostname . '</h2>' . "\n";
                         echo '<h2> <font color=black> Frontend server IP address:<font color=green>  ' .  $_SERVER['SERVER_ADDR'] . '</h2>' . "\n";
                         echo '<h2> <font color=red> Frontend server can not access the Backend: ' . $host . ':' . $port . '</h2><font                                                                                                          color=black> ' . "\n";
