@@ -30,7 +30,7 @@ $hostname = gethostname();
 $connection = @fsockopen($host, $port, $errno, $errstr, 2);
 if (is_resource($connection))
     {
-        function ping($endpoint, $port, $timeout) {
+        function ping($endpoint, $portnumber, $timeout) {
           $tB = microtime(true);
           $fP = fSockOpen($endpoint, $port, $errno, $errstr, $timeout);
           if (!$fP) { return "down"; }
@@ -38,7 +38,7 @@ if (is_resource($connection))
           return round((($tA - $tB) * 1000), 0)." ms";
         }
         
-        $output = ping("$host", 3306, 10);
+        $output = ping("$host", "$port", 10);
 
         echo '<table>
                   <tr>
