@@ -32,7 +32,7 @@ if (is_resource($connection))
     {
         function ping($endpoint, $portnumber, $timeout) {
           $tB = microtime(true);
-          $fP = fSockOpen($endpoint, $port, $errno, $errstr, $timeout);
+          $fP = fSockOpen($endpoint, $portnumber, $errno, $errstr, $timeout);
           if (!$fP) { return "down"; }
           $tA = microtime(true);
           return round((($tA - $tB) * 1000), 0)." ms";
